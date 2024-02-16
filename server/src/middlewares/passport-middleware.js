@@ -10,7 +10,7 @@ const cookieExtractor = function (req) {
 };
 
 const opts = {
-  secret0rKey: SECRET,
+  secretOrKey: SECRET,
   jwtFromRequest: cookieExtractor,
 };
 

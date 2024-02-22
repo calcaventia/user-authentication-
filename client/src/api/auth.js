@@ -2,17 +2,20 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 export async function onRegistration(registrationData) {
-  return await axios.post("http:localhost:8700/api/register", registrationData);
+  return await axios.post(
+    "http://localhost:8900/api/register",
+    registrationData
+  );
 }
 
 export async function onLogin(loginData) {
-  return await axios.post("http:localhost:8700/api/login", loginData);
+  return await axios.post("http://localhost:8900/api/login", loginData);
 }
 
 export async function onLogout() {
-  return await axios.post("http:localhost:8700/api/logout");
+  return await axios.get("http://localhost:8900/api/logout");
 }
 
 export async function fetchProtectedInfo() {
-  return await axios.get("http:localhost:8700/api/protected");
+  return await axios.get("http://localhost:8900/api/protected");
 }

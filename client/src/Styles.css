@@ -1,0 +1,23 @@
+body {
+  background-color: #000;
+}
+
+#form-column {
+  background-color: #fff;
+}
+
+.logo {
+  width: 90px;
+}
+
+.create-account {
+  font-size: 0.8rem;
+}
+
+.register-container {
+  width: 1000px;
+}
+
+.speaker-image {
+  background-color: aquamarine;
+}

@@ -16,16 +16,16 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.register = async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
   try {
     const hashedPassword = await hash(password, 10);
-    await db.query("insert into users(email, password) values ($1 , $2)", [
-      email,
-      hashedPassword,
-    ]);
+    await db.query(
+      "insert into users(name, email, password) values ($1 , $2, $3)",
+      [name, email, hashedPassword]
+    );
     return res.status(201).json({
       success: true,
-      message: "The registration was successful",
+      message: "The registration was successful. Please Login.",
     });
   } catch (error) {
     console.log(error.message);
@@ -35,20 +35,36 @@ exports.register = async (req, res) => {
   }
 };
 
+const { sign } = require("jsonwebtoken");
+const { SECRET } = require("../constants");
+
 exports.login = async (req, res) => {
-  let user = req.user;
-  let payload = {
+  const { user } = req;
+  const { rememberMe } = req.body; // Assuming rememberMe is sent in the request body
+
+  const payload = {
     id: user.user_id,
     email: user.email,
   };
+
   try {
     const token = await sign(payload, SECRET);
-    return res.status(200).cookie("token", token, { httpOnly: true }).json({
+
+    // Set cookie with token and configure expiration based on Remember Me flag
+    const cookieOptions = {
+      httpOnly: true,
+      // Set expiration time based on the Remember Me flag
+      expires: rememberMe
+        ? new Date(Date.now() + 30 * 24 * 3600 * 1000)
+        : undefined,
+    };
+
+    return res.status(200).cookie("token", token, cookieOptions).json({
       success: true,
       message: "Logged in successfully",
     });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     return res.status(500).json({
       error: error.message,
     });

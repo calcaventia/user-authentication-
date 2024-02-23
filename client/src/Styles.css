@@ -7,7 +7,7 @@ body {
   width: 700px;
 }
 
-#form-column {
+.form-column {
   background-color: #fff;
 }
 
@@ -91,4 +91,24 @@ body {
 
 .continue-button {
   background-color: rgb(255, 241, 165);
+}
+
+@media (max-width: 600px) {
+  .register-container {
+    margin: 0 auto;
+    width: 300px;
+  }
+  .form-column {
+    border-radius: 33px;
+  }
+
+  #form-box {
+    width: 150px;
+  }
+  .speaker-image {
+    display: none;
+  }
+  body {
+    background-image: url("./images/speaker.png");
+  }
 }

@@ -2,22 +2,93 @@ body {
   background-color: #000;
 }
 
+.register-container {
+  margin: 0 auto;
+  width: 700px;
+}
+
 #form-column {
   background-color: #fff;
 }
 
 .logo {
+  margin-left: 10px;
   width: 90px;
+}
+
+.form-box {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+}
+
+.placeholder-box {
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .create-account {
   font-size: 0.8rem;
 }
 
-.register-container {
-  width: 1000px;
+.sign-up {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.login-link,
+.register-link {
+  color: rgb(255, 174, 0);
+  text-decoration: none;
+}
+
+#register-button,
+#login-button {
+  border-radius: 30px;
+  font-size: 12px;
 }
 
 .speaker-image {
-  background-color: aquamarine;
+  width: 100%;
+  display: block;
+  margin-left: -12px;
+}
+
+.rememberMe {
+  font-size: 11px;
+}
+
+#rememberMe {
+  border: 1px solid #000;
+  font-size: 15px;
+}
+
+.greeting {
+  font-size: 150px;
+  background: linear-gradient(
+    87.4deg,
+    rgb(255, 241, 165) 1.9%,
+    rgb(200, 125, 76) 49.7%,
+
+    rgb(83, 54, 54) 100.5%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  text-fill-color: transparent;
+}
+
+.dashboard-link {
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.logout-button {
+  background-color: #fff;
+}
+
+.continue-button {
+  background-color: rgb(255, 241, 165);
 }

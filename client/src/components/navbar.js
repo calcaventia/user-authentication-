@@ -1,6 +1,8 @@
 import React from "react";
+import "../Styles.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import logo from "../images/Logo.png";
 
 const Navbar = () => {
   const { isAuth } = useSelector((state) => state.auth);
@@ -8,14 +10,14 @@ const Navbar = () => {
     <nav className="navbar navbar-light bg-light">
       <div className="container">
         <div>
-          <NavLink to="/">
-            <span className="navbar-brand mb-0 h1">Home</span>
+          <NavLink to="/dashboard">
+            <img src={logo} alt="logo" className="logo mt-2" />
           </NavLink>
         </div>
 
         {isAuth ? (
           <div>
-            <NavLink to="/dashboard" className="mx-3">
+            <NavLink to="/dashboard" className="mx-3 dashboard-link">
               <span>Dashboard</span>
             </NavLink>
           </div>

@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import "../Styles.css";
 import Layout from "../components/Layout";
 import { useDispatch } from "react-redux";
 import { fetchProtectedInfo, onLogout } from "../api/auth";
@@ -40,11 +41,19 @@ const Dashboard = () => {
   ) : (
     <div>
       <Layout>
-        <h1>Dashboard</h1>
-        <h2>{protectedData}</h2>
-        <button onClick={() => logout()} className="btn btn-primary">
-          Logout
-        </button>
+        <div className="welcome-body">
+          <h1 className="greeting">Welcome to RUIX</h1>
+          <h2 className="fs-5 mb-4">{protectedData}</h2>
+          <div className="d-flex gap-4">
+            <button className="btn btn-light continue-button">Continue</button>
+            <button
+              onClick={() => logout()}
+              className="btn btn-light logout-button"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
       </Layout>
     </div>
   );

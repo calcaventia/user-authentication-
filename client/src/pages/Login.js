@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className="mt-5 register-container">
       <div className="row">
-        <div className="col-sm-6 rounded-start-5" id="form-column">
+        <div className="col-sm-6 rounded-start-5 form-column">
           <img src={logo} alt="logo" className="logo mt-4" />
           <form onSubmit={(e) => onSubmit(e)} className="form-box mt-5">
             <h1 className="text-center fs-2 sign-up">Log In</h1>

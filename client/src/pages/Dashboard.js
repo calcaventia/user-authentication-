@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import "../Styles.css";
+import imageUrl from "../images/speaker.png";
 import Layout from "../components/Layout";
 import { useDispatch } from "react-redux";
 import { fetchProtectedInfo, onLogout } from "../api/auth";
@@ -52,6 +53,9 @@ const Dashboard = () => {
             >
               Logout
             </button>
+          </div>
+          <div className="speaker-container">
+            <img src={imageUrl} alt="" className="dashboard-speaker-image" />
           </div>
         </div>
       </Layout>

@@ -93,6 +93,18 @@ body {
   background-color: rgb(255, 241, 165);
 }
 
+.speaker-container {
+  margin-top: 70px;
+  padding: 40px 0 0 0;
+}
+
+.dashboard-speaker-image {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  border-radius: 90px;
+}
+
 @media (max-width: 600px) {
   .register-container {
     margin: 0 auto;
